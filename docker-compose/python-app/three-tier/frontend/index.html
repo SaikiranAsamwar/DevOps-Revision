@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python 3-Tier</title>
+</head>
+<body>
+  <h1>🚀 Python 3-Tier App</h1>
+  <p id="data">Loading...</p>
+
+  <script>
+    fetch('/api')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('data').innerText = data;
+      })
+      .catch(err => {
+        document.getElementById('data').innerText = "Error connecting backend";
+      });
+  </script>
+</body>
+</html>

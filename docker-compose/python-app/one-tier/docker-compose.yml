@@ -1,0 +1,6 @@
+services:
+  python-app:
+    build: .
+    container_name: python-one-tier
+    ports:
+      - "5000:5000"

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-Tier App</title>
+</head>
+<body>
+  <h1>🚀 3-Tier App Running</h1>
+  <p id="data">Loading...</p>
+
+  <script>
+    fetch('http://<EC2-PUBLIC-IP>:5000')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('data').innerText = data;
+      })
+      .catch(err => {
+        document.getElementById('data').innerText = "Error connecting backend";
+      });
+  </script>
+  <script>
+  fetch('/api')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('data').innerText = data;
+    });
+</script>
+</body>
+</html>
